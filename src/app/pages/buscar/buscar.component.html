@@ -1,0 +1,39 @@
+<h1>Buscar películas: <small class="text-capitalize">{{ texto }}</small></h1>
+<hr>
+
+<div class="row ">
+    <div class="col">
+
+
+
+        <app-peliculas-poster-grid *ngIf="movies.length > 0" [movies]="movies">
+
+        </app-peliculas-poster-grid>
+
+
+    </div>
+</div>
+
+<div *ngIf="!cargando && movies.length === 0" class="text-center text-white mt-5">
+
+    <p>
+        <i class="fas fa-exclamation-triangle"></i>
+    </p>
+    <h4 class="alert-heading">No se encontro información.</h4>
+
+
+
+</div>
+
+
+<div *ngIf="cargando" class="text-center text-white mt-5">
+
+    <h4 class="alert-heading">Cargando...</h4>
+    <p>
+        <i class="fas fa-sync-alt fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0">
+        Espere por favor.
+    </p>
+
+</div>
